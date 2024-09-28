@@ -1,0 +1,11 @@
+[Unit]
+Description=Amazon schedule
+
+[Service]
+User= amazon
+WorkingDirectory= /home/amazon/public_html/laravel
+ExecStart= php artisan schedule:work
+Restart= always
+
+[Install]
+WantedBy=multi-user.target

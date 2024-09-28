@@ -1,0 +1,11 @@
+[Unit]
+Description=Amazon queue
+
+[Service]
+User= amazon
+WorkingDirectory= /home/amazon/public_html/laravel
+ExecStart= php artisan queue:work --queue=high,medium,low,,default --daemon
+Restart= always
+
+[Install]
+WantedBy=multi-user.target
